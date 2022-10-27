@@ -1,0 +1,42 @@
+{
+    "__typename": "stack",
+    "direction": "vertical",
+    "alignment": "leading",
+    "spacing": 10,
+    "objects": [
+        {
+            "__typename": "stack",
+            "direction": "horizontal",
+            "alignment": "center",
+            "objects": [
+                {
+                    "__typename": "stack",
+                    "direction": "vertical",
+                    "alignment": "leading",
+                    "spacing": 10,
+                    "objects": [
+                        {
+                            "__typename": "text",
+                            "text": "Dr. Charles Burns",
+                            "font": "large_title",
+                            "alignment": "leading",
+                            "weight": "bold"
+                        },
+                        {
+                            "__typename": "text",
+                            "text": "Primary Care, Family Medicine",
+                            "font": "title",
+                            "alignment": "leading",
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            "__typename": "text",
+            "text": "110 Sutter St, Fl 6, San Francisco, CA, 94104",
+            "font": "regular",
+            "alignment": "leading",
+        },
+    ]
+}
