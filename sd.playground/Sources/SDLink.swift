@@ -29,17 +29,16 @@ struct SDLink: View {
         URL(string: destination)!
     }
     
-    var padding: [String : Any]? {
-        object["padding"] as? [String : String]
+    var padding: [String : CGFloat]? {
+        object["padding"] as? [String : CGFloat]
     }
 
-    var edgeInsets: EdgeInsets {
-        return EdgeInsets(top: padding?["top"] as? CGFloat ?? 0, leading: padding?["leading"] as? CGFloat ?? 0, bottom: padding?["bottom"] as? CGFloat ?? 0, trailing: padding?["trailing"] as? CGFloat ?? 0)
+    var color: [String: CGFloat]? {
+        object["color"] as? [String : CGFloat]
     }
     
     var body: some View {
         Link(text, destination: url)
-            .padding(edgeInsets)
     }
 }
 

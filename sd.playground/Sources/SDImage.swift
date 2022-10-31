@@ -5,7 +5,7 @@ import SwiftUI
 import Foundation
 
 
-struct SDDivider: View {
+struct SDImage: View {
     
     let object: [String: Any]
     
@@ -17,6 +17,10 @@ struct SDDivider: View {
         object["__typename"] as! String
     }
     
+    var name: String {
+        object["name"] as! String
+    }
+    
     var padding: [String : CGFloat]? {
         object["padding"] as? [String : CGFloat]
     }
@@ -26,7 +30,10 @@ struct SDDivider: View {
     }
     
     var body: some View {
-        Divider()
+        Image(uiImage: #imageLiteral(resourceName: name))
+            .resizable()
+            .scaledToFit()
+            .frame(width: 28, height: 35)
     }
 }
 

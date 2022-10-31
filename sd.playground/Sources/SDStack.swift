@@ -64,12 +64,8 @@ struct StackSD: View {
         return .center
     }
     
-    var padding: [String : Any]? {
-        object["padding"] as? [String : String]
-    }
-    
-    var edgeInsets: EdgeInsets {
-        return EdgeInsets(top: padding?["top"] as? CGFloat ?? 0, leading: padding?["leading"] as? CGFloat ?? 0, bottom: padding?["bottom"] as? CGFloat ?? 0, trailing: padding?["trailing"] as? CGFloat ?? 0)
+    var padding: [String : CGFloat]? {
+        object["padding"] as? [String : CGFloat]
     }
     
     var view: some View {
@@ -94,7 +90,7 @@ struct StackSD: View {
     
     var body: some View {
         view
-            .padding(edgeInsets)
+            .fixedSize()
     }
 }
 

@@ -27,11 +27,18 @@ struct SDText: View {
     
     var weightName: String? {
         object["weight"] as? String
-        
     }
     
     var alignmentName: String? {
         object["alignment"] as? String
+    }
+    
+    var padding: [String: CGFloat]? {
+        object["padding"] as? [String : CGFloat]
+    }
+    
+    var color: [String: CGFloat]? {
+        object["color"] as? [String : CGFloat]
     }
     
     var font: Font {
@@ -119,33 +126,12 @@ struct SDText: View {
         
         return .center
     }
-    
-    var padding: [String : Any]? {
-        object["padding"] as? [String : String]
-    }
 
-    var edgeInsets: EdgeInsets {
-        return EdgeInsets(top: padding?["top"] as? CGFloat ?? 0, leading: padding?["leading"] as? CGFloat ?? 0, bottom: padding?["bottom"] as? CGFloat ?? 0, trailing: padding?["trailing"] as? CGFloat ?? 0)
-    }
-    
     var body: some View {
         Text(text)
             .font(font)
             .fontWeight(weight)
             .multilineTextAlignment(alignment)
-            .padding(edgeInsets)
     }
-    
-    //    func getItalized() -> Text {
-    //
-    //        let text = getBolded()
-    //
-    //        if let features = features, features.contains("italic") {
-    //            return text.italic()
-    //        }
-    //
-    //        return text
-    //    }
-    
 }
 

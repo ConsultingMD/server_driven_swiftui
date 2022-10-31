@@ -2,15 +2,17 @@
 
 
 import Foundation
+import SwiftUI
 import PlaygroundSupport
 
 
-if let pathJson = Bundle.main.path(forResource:"provider_card", ofType: "json"), let dataJson = FileManager.default.contents(atPath: pathJson) {
-    do {
+if let pathJson = Bundle.main.path(forResource:"provider_card", ofType: "json"), let dataJson = FileManager.default.contents(atPath: pathJson) {    do {
         let object = try JSONSerialization.jsonObject(with: dataJson, options: JSONSerialization.ReadingOptions.json5Allowed) as! [String : Any]
         let view = SDView(object)
         PlaygroundPage.current.setLiveView(
-            view.frame(width: 500, height: 1000, alignment: .center).preferredColorScheme(.dark)
+            view
+                .preferredColorScheme(.dark)
+                .padding(EdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50))
         )
     }
 }

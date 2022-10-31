@@ -2,7 +2,17 @@
     "__typename": "stack",
     "direction": "vertical",
     "alignment": "leading",
-    "spacing": 10,
+    "spacing": 25,
+    "corner_radius": 15,
+    "border": {
+        "color": {
+            "name": "gray",
+        },
+        "width": 1,
+    },
+    "padding": {
+        "all": 25,
+    },
     "objects": [
         {
             "__typename": "stack",
@@ -13,7 +23,7 @@
                     "__typename": "stack",
                     "direction": "vertical",
                     "alignment": "leading",
-                    "spacing": 10,
+                    "spacing": 15,
                     "objects": [
                         {
                             "__typename": "text",
@@ -26,17 +36,67 @@
                             "__typename": "text",
                             "text": "Primary Care, Family Medicine",
                             "font": "title",
-                            "alignment": "leading",
+                            "weight": "light",
+                            "alignment": "leading"
                         },
                     ]
                 },
+                {
+                    "__typename": "async_image",
+                    "url": "https://grnds-uat-tp-provider-images.s3.amazonaws.com/provider_images/148544/active_provider_image_file_20180827015731.jpeg",
+                },
+            ]
+        },
+        {
+            "__typename": "stack",
+            "direction": "horizontal",
+            "alignment": "center",
+            "spacing": 15,
+            "objects": [
+                {
+                    "__typename": "image",
+                    "name": "pin.png",
+                },
+                {
+                    "__typename": "text",
+                    "text": "1.4 mi",
+                    "color": {
+                        "red": 0,
+                        "green": 132,
+                        "blue": 137
+                    },
+                },
+                {
+                    "__typename": "divider",
+                    "padding": {
+                        "top" : 5,
+                        "bottom": 5,
+                        "leading": 10,
+                        "trailing": 10
+                    }
+                },
+                {
+                    "__typename": "image",
+                    "name": "laptop.png",
+                },
+                {
+                    "__typename": "text",
+                    "text": "Telehealth Offered",
+                    "color": {
+                        "red": 0,
+                        "green": 132,
+                        "blue": 137
+                    },
+                },
+
             ]
         },
         {
             "__typename": "text",
             "text": "110 Sutter St, Fl 6, San Francisco, CA, 94104",
             "font": "regular",
-            "alignment": "leading",
+            "weight": "light",
+            "alignment": "leading"
         },
     ]
 }
