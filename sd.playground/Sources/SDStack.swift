@@ -13,10 +13,6 @@ struct StackSD: View {
         self.object = object
     }
     
-    var type: String {
-        object["__typename"] as! String
-    }
-    
     var direction: String {
         object["direction"] as! String
     }
@@ -64,10 +60,6 @@ struct StackSD: View {
         return .center
     }
     
-    var padding: [String : CGFloat]? {
-        object["padding"] as? [String : CGFloat]
-    }
-    
     var view: some View {
         if direction == "horizontal" {
             return HStack(alignment: verticalAlignment, spacing: spacing) {
@@ -90,7 +82,7 @@ struct StackSD: View {
     
     var body: some View {
         view
-            .fixedSize()
+//            .fixedSize()
     }
 }
 

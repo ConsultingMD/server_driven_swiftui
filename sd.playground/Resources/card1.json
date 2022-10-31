@@ -44,6 +44,11 @@
                 {
                     "__typename": "async_image",
                     "url": "https://grnds-uat-tp-provider-images.s3.amazonaws.com/provider_images/148544/active_provider_image_file_20180827015731.jpeg",
+                    "corner_radius": 62.5,
+                    "frame": {
+                        "width": 125,
+                        "height": 125,
+                    }
                 },
             ]
         },
@@ -56,6 +61,10 @@
                 {
                     "__typename": "image",
                     "name": "pin.png",
+                    "frame": {
+                        "width": 28,
+                        "height": 35,
+                    }
                 },
                 {
                     "__typename": "text",
@@ -78,6 +87,10 @@
                 {
                     "__typename": "image",
                     "name": "laptop.png",
+                    "frame": {
+                        "width": 28,
+                        "height": 35,
+                    }
                 },
                 {
                     "__typename": "text",

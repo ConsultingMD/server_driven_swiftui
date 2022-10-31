@@ -13,14 +13,10 @@ struct SDText: View {
         self.object = object
     }
     
-    var type: String {
-        object["__typename"] as! String
-    }
-    
     var text: String {
         object["text"] as! String
     }
-    
+
     var fontName: String? {
         object["font"] as? String
     }
@@ -31,14 +27,6 @@ struct SDText: View {
     
     var alignmentName: String? {
         object["alignment"] as? String
-    }
-    
-    var padding: [String: CGFloat]? {
-        object["padding"] as? [String : CGFloat]
-    }
-    
-    var color: [String: CGFloat]? {
-        object["color"] as? [String : CGFloat]
     }
     
     var font: Font {

@@ -25,12 +25,16 @@ public struct SDView: View {
         object["color"] as? [String : CGFloat]
     }
     
-    var border: [String: Any]? {
-        object["border"] as? [String: Any]
-    }
-    
     var cornerRadius: CGFloat {
         object["corner_radius"] as? CGFloat ?? 0
+    }
+    
+    var frame: [String: Any]? {
+        object["frame"] as? [String: Any]
+    }
+    
+    var border: [String: Any]? {
+        object["border"] as? [String: Any]
     }
     
     var borderColor: [String: Any]? {
@@ -42,39 +46,57 @@ public struct SDView: View {
     }
     
     var view: some View {
+        
+        let view: any View
+        
         if type == "stack" {
-            return StackSD(object)
+            view = StackSD(object)
         }
         
 //        if type == "grid" {
 //            return SDGrid(object)
 //        }
         
-        if type == "async_image" {
-            return SDAsyncImage(object)
+        else if type == "async_image" {
+            view = SDAsyncImage(object)
         }
         
-        if type == "image" {
-            return SDImage(object)
+        else if type == "image" {
+            view = SDImage(object)
         }
         
-        if type == "link" {
-            return SDLink(object)
+        else if type == "link" {
+            view = SDLink(object)
         }
         
-        if type == "text" {
-            return SDText(object)
+        else if type == "text" {
+            view = SDText(object)
         }
         
-        if type == "divider" {
-            return SDDivider(object)
+        else if type == "divider" {
+            view = SDDivider(object)
         }
         
-        return Text("Unknown __typename")
+        else {
+            view = Text("Unknown __typename")
+        }
+
+        if let frame = frame {
+            return SDFrame(frame, view)
+        }
+        
+        return view
+    }
+    
+    var viewFramed: some View {
+        if let frame = frame {
+            return SDFrame(frame, view)
+        }
+        return view
     }
     
     public var body: some View {
-        view
+        viewFramed
             .foregroundColor(SDColor(color).color)
             .padding(SDPadding(padding).insets)
             .border(SDColor(borderColor).color, width: borderWidth)
