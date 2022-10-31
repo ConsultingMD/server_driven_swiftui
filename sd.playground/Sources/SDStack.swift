@@ -82,7 +82,6 @@ struct StackSD: View {
     
     var body: some View {
         view
-//            .fixedSize()
     }
 }
 
