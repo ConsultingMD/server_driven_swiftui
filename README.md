@@ -2,7 +2,7 @@
 
 ## Implementation 
 
-Several json exampled are `Resources/`
+Several json exampled are under `Resources/`
 The implemented types are under `Sources` prefixed with _SD_. `ViewSD` is a flexible type that can instantiate any view given its `__typename`. 
 Go to the source file to see which keys & values are required and supported.
 
